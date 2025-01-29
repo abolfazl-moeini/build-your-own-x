@@ -1,0 +1,39 @@
+{
+  "name": "componium-test",
+  "description": "Componium Test - JavaScript testing framework",
+  "version": "1.0.4",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "exports": {
+    ".": "./packages/runner/tester.js",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "test": "node packages/bin/ct.js tests",
+    "release": "release-it"
+  },
+  "bin": {
+    "ct": "./packages/bin/ct.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.3.10",
+    "debug": "^4.3.4",
+    "eta": "^2.0.1",
+    "glob": "^10.3.10",
+    "puppeteer": "^19.9.1",
+    "sinon": "^17.0.1",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@release-it/keep-a-changelog": "^4.0.0",
+    "prettier": "2.8.7",
+    "release-it": "^16.2.1"
+  }
+}

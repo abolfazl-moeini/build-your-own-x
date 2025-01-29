@@ -1,0 +1,40 @@
+name: Chapter 6
+
+# This example workflow assumes that the default branch for your repository is `main`. If the default branch has a different name, edit this example and add your repository's default branch.
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+#
+jobs:
+  build:
+
+    # <!-- This is a YAML comment for use in annotated code examples. -->
+    # You can run this workflow using a different operating systems.
+    #
+    # The starter workflow configures jobs to run on Linux, using the GitHub-hosted `ubuntu-latest` runners. You can change the `runs-on` key to run your jobs on a different operating system.
+    #
+    # For example, you can use the GitHub-hosted Windows runners by specifying `runs-on: windows-latest`. Or, you can run on the GitHub-hosted macOS runners using `runs-on: macos-latest`.
+    #
+    # You can also run jobs in Docker containers, or you can provide a self-hosted runner that runs on your own infrastructure. For more information, see "[AUTOTITLE](/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idruns-on)."
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./chapter6
+    # This job uses a matrix strategy to run the job four times, once for each specified Node version. For more information, see "[AUTOTITLE](/actions/using-jobs/using-a-matrix-for-your-jobs)."
+    strategy:
+      matrix:
+        node-version: [20.x]
+    #
+    steps:
+      # This step uses the `actions/checkout` action to download a copy of your repository on the runner.
+      - uses: actions/checkout@v3
+      # This step uses the `actions/setup-node` action to set up Node.js for each version indicated by the `matrix.node-version` key above.
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      # This step runs `npm ci` to install any dependencies listed in your `package.json` file.
+      - run: cd componium-test && npm ci && npm test

@@ -1,0 +1,23 @@
+{
+  "name": "maintenance-tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run start",
+    "start": "node index.js",
+    "release": "release-it",
+    "check-updates": "ncu",
+    "license": "license-report --output=markdown"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "module",
+  "devDependencies": {
+    "license-report": "^6.4.0",
+    "npm-check-updates": "^16.13.2",
+    "release-it": "^16.1.0"
+  },
+  "license": "MIT"
+}

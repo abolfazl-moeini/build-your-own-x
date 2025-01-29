@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>🟪 Componium Test Runner</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "componium-test": "/runner/tester.js",
+          "chai": "/chai.js",
+          "sinon": "/sinon.js"
+        }
+      }
+    </script>
+
+    <script type="module" src="chai.js"></script>
+    <script type="module" src="sinon.js"></script>
+    <script type="module" src="browser/env.js"></script>
+<% it.testFiles.forEach(function(test){ %>
+    <script type="module" src="/__tests/<%= test %>"></script>
+<% }) %>
+  </head>
+  <body>
+    <%~ it.body %>
+  </body>
+</html>

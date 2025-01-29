@@ -1,0 +1,17 @@
+{
+  "name": "chapter3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/core": "15.2.4",
+    "@sveltejs/adapter-node": "1.2.3",
+    "vue": "3.2.47"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "chapter7",
+  "version": "1.0.0",
+  "description": "Chapter 7",
+  "main": "index.js",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+  }
+}
